@@ -22,8 +22,13 @@ export function NewLog() {
   const log = useLogStore((state) => state.log);
   const setLog = useLogStore((state) => state.setLog)
   const setLogs = useLogStore((state) => state.setLogs)
-  const logs = useLogStore((state) => state.logs) // not confirm
+  const logs = useLogStore((state) => state.setLogs)
+  // const logs = useLogStore((state) => state.logs) // not confirm
 
+  const closeDialog = () => {
+    document.getElementById("close-btn")?.click();
+  }
+  
   const validateLog = () => {
     if(!log.date || !log.hour || log.hour === 0){
       throw "Date or hour can't be empty"
@@ -40,6 +45,7 @@ export function NewLog() {
         title: "Successfully create log",
         description: `${log.hour} hours in ${log.date.toDateString()}`,
       })
+      closeDialog()
     } catch(e){
       toast({
         variant: "destructive",
