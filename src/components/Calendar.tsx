@@ -29,9 +29,9 @@ const Calendar = () => {
 
     const getColors = (value: number) => {
         if (value == 0) {
-            return "bg-gray-100"
+            return "bg-gray-100 border border-gray-300"
         } else if (value < 5) {
-            return "bg-green-100"
+            return "bg-green-200"
         } else if (value < 10) {
             return "bg-green-300"
         } else {

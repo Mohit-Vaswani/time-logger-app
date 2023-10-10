@@ -11,11 +11,11 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { GrAdd } from "react-icons/gr"
 import { DatePicker } from "./DatePicker"
 import { useLogStore } from "@/store"
 import { useToast } from "@/components/ui/use-toast"
 import dayjs from "dayjs"
+import { Plus } from "lucide-react"
 
 export function NewLog() {
   const { toast } = useToast()
@@ -60,7 +60,7 @@ export function NewLog() {
     <Dialog>
       <DialogTrigger asChild>
         <div className="border border-gray-400 border-dashed sm:w-72 py-3 flex items-center justify-center cursor-pointer rounded-md hover:border-solid">
-          <GrAdd />
+          <Plus />
         </div>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
